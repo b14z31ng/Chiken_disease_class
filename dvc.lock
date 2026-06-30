@@ -5,10 +5,10 @@ stages:
     deps:
     - path: config/config.yaml
       md5: 3f6dc733e0735665409e293214355568
-      size: 818
+      size: 788
     - path: src/cnnClassifier/pipeline/stage_01_data_ingestion.py
       md5: b0ff51aae578695575ba98f83c03d86e
-      size: 914
+      size: 883
     outs:
     - path: artifacts/data_ingestion/Chicken-fecal-images
       md5: 9e1f8dd2eae3c29e9d635df89d438ae4.dir
@@ -19,10 +19,10 @@ stages:
     deps:
     - path: config/config.yaml
       md5: 3f6dc733e0735665409e293214355568
-      size: 818
+      size: 788
     - path: src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
       md5: 5bbb3b3d7f36b28620ae359473f09153
-      size: 1003
+      size: 969
     params:
       params.yaml:
         CLASSES: 2
@@ -35,8 +35,9 @@ stages:
         WEIGHTS: imagenet
     outs:
     - path: artifacts/prepare_base_model
-      md5: 0774dbc0f4a82fe0f16c2b4f8b2ad70c.dir
-      size: 118054560
+      hash: md5
+      md5: fc4753b94180ac32bcf51e63cfbf4e2a.dir
+      size: 118073624
       nfiles: 2
   training:
     cmd: python src/cnnClassifier/pipeline/stage_03_training.py

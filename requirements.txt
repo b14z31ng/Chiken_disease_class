@@ -14,4 +14,6 @@ types-PyYAML
 scipy
 Flask
 Flask-Cors
--e .
+gunicorn
+tensorflow
+h5py
